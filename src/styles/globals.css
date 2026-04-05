@@ -18,6 +18,19 @@
   .font-arima {
     font-family: var(--font-arima), ui-serif, Georgia, serif;
   }
+
+  /* Landing UI: light mode uses deep black ink; dark mode uses near-white */
+  .text-ink {
+    @apply text-zinc-950 dark:text-zinc-50;
+  }
+
+  .text-ink-muted {
+    @apply text-zinc-900 dark:text-zinc-300;
+  }
+
+  .text-ink-subtle {
+    @apply text-zinc-800 dark:text-zinc-400;
+  }
 }
 
 @layer base {

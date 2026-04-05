@@ -18,7 +18,7 @@ export function BrandLogo({ className }: Props) {
       >
         N
       </motion.span>
-      <span className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+      <span className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
         NexaUI
       </span>
     </div>

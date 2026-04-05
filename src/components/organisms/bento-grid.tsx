@@ -44,11 +44,11 @@ export function BentoGrid() {
       <div className="mb-10 text-center">
         <h2
           id="bento-heading"
-          className="font-arima text-2xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-3xl"
+          className="font-arima text-2xl font-bold tracking-tight text-ink md:text-3xl"
         >
           Bento showcase
         </h2>
-        <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+        <p className="mt-2 text-ink-muted">
           Asymmetric layout, scroll parallax, and small interactive labs.
         </p>
       </div>
@@ -137,10 +137,10 @@ function BentoMorphIcons() {
           <Layers className="h-5 w-5" aria-hidden />
         </span>
         <div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-ink">
             Context-aware icons
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-ink-muted">
             SVG paths interpolate on interaction — state follows intent.
           </p>
         </div>
@@ -173,7 +173,7 @@ function BentoMorphIcons() {
             transition={{ duration: 0.22 }}
           />
         </svg>
-        <p className="pointer-events-none absolute bottom-3 text-xs text-zinc-500">
+        <p className="pointer-events-none absolute bottom-3 text-xs text-ink-subtle">
           Hover to morph
         </p>
       </div>
@@ -193,17 +193,17 @@ function BentoThemeHarmonizer() {
           <Palette className="h-5 w-5" aria-hidden />
         </span>
         <div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-ink">
             Theme harmonizer
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-ink-muted">
             Tune a triad and preview harmony on a live glass tile.
           </p>
         </div>
       </div>
 
       <div className="flex flex-wrap gap-4">
-        <label className="flex flex-col gap-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <label className="flex flex-col gap-1 text-xs font-medium text-ink-muted">
           Primary
           <input
             type="color"
@@ -212,7 +212,7 @@ function BentoThemeHarmonizer() {
             className="h-10 w-full min-w-[5rem] cursor-pointer rounded-lg border border-zinc-200 bg-transparent dark:border-white/10"
           />
         </label>
-        <label className="flex flex-col gap-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <label className="flex flex-col gap-1 text-xs font-medium text-ink-muted">
           Accent
           <input
             type="color"
@@ -221,7 +221,7 @@ function BentoThemeHarmonizer() {
             className="h-10 w-full min-w-[5rem] cursor-pointer rounded-lg border border-zinc-200 bg-transparent dark:border-white/10"
           />
         </label>
-        <label className="flex flex-col gap-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <label className="flex flex-col gap-1 text-xs font-medium text-ink-muted">
           Surface
           <input
             type="color"
@@ -267,19 +267,19 @@ function BentoFluidTypography() {
           <Type className="h-5 w-5" aria-hidden />
         </span>
         <div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-ink">
             Fluid typography
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-ink-muted">
             Scale Arima in real time — feel the voice change.
           </p>
         </div>
       </div>
 
       <div className="space-y-3">
-        <label className="flex items-center justify-between gap-3 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <label className="flex items-center justify-between gap-3 text-xs font-medium text-ink-muted">
           Optical size
-          <span className="tabular-nums text-zinc-900 dark:text-zinc-100">
+          <span className="tabular-nums text-ink">
             {size}px
           </span>
         </label>
@@ -294,7 +294,7 @@ function BentoFluidTypography() {
       </div>
 
       <p
-        className="font-arima mt-auto rounded-2xl border border-zinc-200/80 bg-white/50 px-4 py-3 text-zinc-900 dark:border-white/10 dark:bg-zinc-950/50 dark:text-white"
+        className="font-arima mt-auto rounded-2xl border border-zinc-200/80 bg-white/50 px-4 py-3 text-ink dark:border-white/10 dark:bg-zinc-950/50"
         style={{ fontSize: size, lineHeight: 1.15 }}
       >
         Arima scales with purpose.
@@ -313,10 +313,10 @@ function BentoSkeletonFirst() {
           <Box className="h-5 w-5" aria-hidden />
         </span>
         <div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-ink">
             Skeleton-first
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-sm text-ink-muted">
             Flip the interface into skeleton loaders to validate layout rhythm
             before the data arrives.
           </p>
@@ -325,7 +325,7 @@ function BentoSkeletonFirst() {
 
       <div className="flex flex-1 flex-col items-stretch gap-4 md:max-w-md">
         <label className="flex cursor-pointer items-center justify-between gap-3 rounded-2xl border border-zinc-200/80 bg-white/40 px-4 py-3 dark:border-white/10 dark:bg-zinc-950/40">
-          <span className="text-sm font-medium text-zinc-800 dark:text-zinc-100">
+          <span className="text-sm font-medium text-ink">
             Skeleton mode
           </span>
           <input
@@ -354,9 +354,9 @@ function BentoSkeletonFirst() {
               </div>
             </div>
           ) : (
-            <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-200">
+            <div className="space-y-2 text-sm text-ink-muted">
               <p className="font-medium">Content-ready panel</p>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <p className="text-ink-muted">
                 Typography, spacing, and affordances stay stable while payloads
                 stream in.
               </p>

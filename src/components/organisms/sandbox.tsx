@@ -38,14 +38,14 @@ export function Sandbox() {
         />
 
         <div className="relative mx-auto max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200/80 bg-white/50 px-3 py-1 text-xs font-medium text-zinc-600 dark:border-white/10 dark:bg-zinc-950/50 dark:text-zinc-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200/80 bg-white/50 px-3 py-1 text-xs font-medium text-ink-muted dark:border-white/10 dark:bg-zinc-950/50">
             <Sparkles className="h-3.5 w-3.5 text-amber-500" aria-hidden />
             Magic UI moment
           </div>
-          <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white md:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink md:text-3xl">
             Interactive sandbox
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-ink-muted">
             Trigger confetti and a continuous shine pass — a tactile reward for
             explorers who click everything twice.
           </p>
