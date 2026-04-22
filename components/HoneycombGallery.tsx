@@ -60,27 +60,31 @@ const tiles: Tile[] = [
   },
 ];
 
-/* Pointy-top hex, W:H ≈ 0.866:1 */
-const HEX_W = 96;
-const HEX_H = 110;
+/* Pointy-top hex, W:H ≈ 0.866:1 — bigger tiles + more breathing room */
+const HEX_W = 168;
+const HEX_H = 194;
+const GAP = 22;
 const HEX_CLIP = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
 
 /**
- * Rosette of 7 hexes: 1 center + 6 neighbours sharing an edge with it.
- * Coordinates are the top-left of each tile's bounding box.
+ * Rosette of 7 hexes: 1 center + 6 neighbours. Pitch includes GAP so the
+ * hexes read as separate physical tiles instead of a continuous mesh.
  */
+const H_PITCH = HEX_W + GAP;               // 176
+const ROW_Y = HEX_H * 0.75 + GAP;          // 154.5
+
 const positions: Array<{ x: number; y: number }> = [
-  { x: HEX_W,     y: HEX_H * 0.75 },           // center
-  { x: HEX_W * 2, y: HEX_H * 0.75 },           // right
-  { x: HEX_W * 1.5, y: HEX_H * 1.5 },          // lower-right
-  { x: HEX_W * 0.5, y: HEX_H * 1.5 },          // lower-left
-  { x: 0,         y: HEX_H * 0.75 },           // left
-  { x: HEX_W * 0.5, y: 0 },                    // upper-left
-  { x: HEX_W * 1.5, y: 0 },                    // upper-right
+  { x: H_PITCH, y: ROW_Y },                // center
+  { x: H_PITCH * 2, y: ROW_Y },            // right
+  { x: H_PITCH * 1.5, y: ROW_Y * 2 },      // lower-right
+  { x: H_PITCH * 0.5, y: ROW_Y * 2 },      // lower-left
+  { x: 0, y: ROW_Y },                      // left
+  { x: H_PITCH * 0.5, y: 0 },              // upper-left
+  { x: H_PITCH * 1.5, y: 0 },              // upper-right
 ];
 
-const CONTAINER_W = HEX_W * 3;        // 288
-const CONTAINER_H = HEX_H * 1.5 + HEX_H; // 275
+const CONTAINER_W = H_PITCH * 2 + HEX_W;   // 410
+const CONTAINER_H = ROW_Y * 2 + HEX_H;     // 395
 
 export default function HoneycombGallery() {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -131,7 +135,7 @@ export default function HoneycombGallery() {
                 transition: "opacity 260ms var(--ease-aura)",
               }}
             >
-              <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/80">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85">
                 {tile.subtitle}
               </span>
             </div>
@@ -152,10 +156,10 @@ export default function HoneycombGallery() {
                     WebkitBackdropFilter: "blur(2px)",
                   }}
                 >
-                  <p className="font-display text-[18px] italic leading-none text-white">
+                  <p className="font-display text-[26px] italic leading-none text-white">
                     {tile.title}
                   </p>
-                  <p className="mt-1.5 text-[8.5px] font-semibold uppercase leading-tight tracking-[0.18em] text-white/80">
+                  <p className="mt-2 text-[10px] font-semibold uppercase leading-tight tracking-[0.2em] text-white/85">
                     {tile.subtitle}
                   </p>
                 </motion.div>

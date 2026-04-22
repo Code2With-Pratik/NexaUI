@@ -1,10 +1,12 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
-const CodeCards: React.FC = () => {
+const CodeCards: React.FC<{ className?: string }> = ({ className }) => {
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,7 +30,10 @@ const CodeCards: React.FC = () => {
   }, []);
 
   return (
-    <div ref={mainRef} className="min-h-[2000px] bg-[#131417] text-white font-sans selection:bg-purple-500/30">
+    <div
+      ref={mainRef}
+      className={className ?? "font-sans selection:bg-purple-500/30"}
+    >
       <style>{`
         :root { --strokeDashoffset: 0; }
         
@@ -112,7 +117,7 @@ const CodeCards: React.FC = () => {
         }
       `}</style>
 
-      <main className="relative flex justify-center w-[740px] mx-auto pt-20">
+      <main className="relative flex w-[740px] justify-center pt-20">
         {/* Animated Background SVG */}
         <svg id="svgPaths" className="absolute top-[75px] z-0" width="740" height="2000">
           <use href="#linePath01" className="svg-path-style" style={{ strokeWidth: '20px', strokeDasharray: '20px 50px 120px 50px 20px 50px 300px 50px 20px 50px 150px 50px 20px 20000px' }} />
