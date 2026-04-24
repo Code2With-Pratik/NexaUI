@@ -1,0 +1,70 @@
+/**
+* @license
+*
+* Font Family: Britney
+* Designed by: Diana Ovezea & Sabina Chipară
+* URL: https://www.fontshare.com/fonts/britney
+* © 2026 Indian Type Foundry
+*
+* Britney Light 
+* Britney Regular 
+* Britney Bold 
+* Britney Ultra 
+* Britney Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Britney-Light';
+  src: url('../fonts/Britney-Light.woff2') format('woff2'),
+       url('../fonts/Britney-Light.woff') format('woff'),
+       url('../fonts/Britney-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Britney-Regular';
+  src: url('../fonts/Britney-Regular.woff2') format('woff2'),
+       url('../fonts/Britney-Regular.woff') format('woff'),
+       url('../fonts/Britney-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Britney-Bold';
+  src: url('../fonts/Britney-Bold.woff2') format('woff2'),
+       url('../fonts/Britney-Bold.woff') format('woff'),
+       url('../fonts/Britney-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Britney-Ultra';
+  src: url('../fonts/Britney-Ultra.woff2') format('woff2'),
+       url('../fonts/Britney-Ultra.woff') format('woff'),
+       url('../fonts/Britney-Ultra.ttf') format('truetype');
+  font-weight: 1000;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 300.0 to 900.0
+*/
+@font-face {
+  font-family: 'Britney-Variable';
+  src: url('../fonts/Britney-Variable.woff2') format('woff2'),
+       url('../fonts/Britney-Variable.woff') format('woff'),
+       url('../fonts/Britney-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+

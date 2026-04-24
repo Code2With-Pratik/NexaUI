@@ -1,0 +1,60 @@
+/**
+* @license
+*
+* Font Family: Kalam
+* Designed by: Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/kalam
+* © 2026 Indian Type Foundry
+*
+* Kalam Light 
+* Kalam Regular 
+* Kalam Bold 
+* Kalam Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Kalam-Light';
+  src: url('../fonts/Kalam-Light.woff2') format('woff2'),
+       url('../fonts/Kalam-Light.woff') format('woff'),
+       url('../fonts/Kalam-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kalam-Regular';
+  src: url('../fonts/Kalam-Regular.woff2') format('woff2'),
+       url('../fonts/Kalam-Regular.woff') format('woff'),
+       url('../fonts/Kalam-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kalam-Bold';
+  src: url('../fonts/Kalam-Bold.woff2') format('woff2'),
+       url('../fonts/Kalam-Bold.woff') format('woff'),
+       url('../fonts/Kalam-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'Kalam-Variable';
+  src: url('../fonts/Kalam-Variable.woff2') format('woff2'),
+       url('../fonts/Kalam-Variable.woff') format('woff'),
+       url('../fonts/Kalam-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+

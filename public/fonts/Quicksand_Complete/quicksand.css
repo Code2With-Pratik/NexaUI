@@ -1,0 +1,80 @@
+/**
+* @license
+*
+* Font Family: Quicksand
+* Designed by: Andrew Paglinawan
+* URL: https://www.fontshare.com/fonts/quicksand
+* © 2026 Indian Type Foundry
+*
+* Quicksand Light 
+* Quicksand Regular 
+* Quicksand Medium 
+* Quicksand SemiBold 
+* Quicksand Bold 
+* Quicksand Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Quicksand-Light';
+  src: url('../fonts/Quicksand-Light.woff2') format('woff2'),
+       url('../fonts/Quicksand-Light.woff') format('woff'),
+       url('../fonts/Quicksand-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand-Regular';
+  src: url('../fonts/Quicksand-Regular.woff2') format('woff2'),
+       url('../fonts/Quicksand-Regular.woff') format('woff'),
+       url('../fonts/Quicksand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand-Medium';
+  src: url('../fonts/Quicksand-Medium.woff2') format('woff2'),
+       url('../fonts/Quicksand-Medium.woff') format('woff'),
+       url('../fonts/Quicksand-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand-SemiBold';
+  src: url('../fonts/Quicksand-SemiBold.woff2') format('woff2'),
+       url('../fonts/Quicksand-SemiBold.woff') format('woff'),
+       url('../fonts/Quicksand-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand-Bold';
+  src: url('../fonts/Quicksand-Bold.woff2') format('woff2'),
+       url('../fonts/Quicksand-Bold.woff') format('woff'),
+       url('../fonts/Quicksand-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'Quicksand-Variable';
+  src: url('../fonts/Quicksand-Variable.woff2') format('woff2'),
+       url('../fonts/Quicksand-Variable.woff') format('woff'),
+       url('../fonts/Quicksand-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+

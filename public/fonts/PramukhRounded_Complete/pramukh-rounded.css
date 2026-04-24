@@ -1,0 +1,208 @@
+/**
+* @license
+*
+* Font Family: Pramukh Rounded
+* Designed by: Aarya Purohit, Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/pramukh-rounded
+* © 2026 Indian Type Foundry
+*
+* Pramukh Rounded Extralight 
+* Pramukh Rounded ExtralightItalic 
+* Pramukh Rounded Light 
+* Pramukh Rounded LightItalic 
+* Pramukh Rounded Semilight 
+* Pramukh Rounded SemilightItalic 
+* Pramukh Rounded Regular 
+* Pramukh Rounded Italic 
+* Pramukh Rounded Semibold 
+* Pramukh Rounded SemiboldItalic 
+* Pramukh Rounded Bold 
+* Pramukh Rounded BoldItalic 
+* Pramukh Rounded Extrabold 
+* Pramukh Rounded ExtraboldItalic 
+* Pramukh Rounded Black 
+* Pramukh Rounded BlackItalic 
+* Pramukh Rounded Variable (Variable font)
+* Pramukh Rounded VariableItalic (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'PramukhRounded-Extralight';
+  src: url('../fonts/PramukhRounded-Extralight.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Extralight.woff') format('woff'),
+       url('../fonts/PramukhRounded-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-ExtralightItalic';
+  src: url('../fonts/PramukhRounded-ExtralightItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-ExtralightItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-ExtralightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Light';
+  src: url('../fonts/PramukhRounded-Light.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Light.woff') format('woff'),
+       url('../fonts/PramukhRounded-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-LightItalic';
+  src: url('../fonts/PramukhRounded-LightItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-LightItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Semilight';
+  src: url('../fonts/PramukhRounded-Semilight.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Semilight.woff') format('woff'),
+       url('../fonts/PramukhRounded-Semilight.ttf') format('truetype');
+  font-weight: 350;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-SemilightItalic';
+  src: url('../fonts/PramukhRounded-SemilightItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-SemilightItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-SemilightItalic.ttf') format('truetype');
+  font-weight: 350;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Regular';
+  src: url('../fonts/PramukhRounded-Regular.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Regular.woff') format('woff'),
+       url('../fonts/PramukhRounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-Italic';
+  src: url('../fonts/PramukhRounded-Italic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Italic.woff') format('woff'),
+       url('../fonts/PramukhRounded-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Semibold';
+  src: url('../fonts/PramukhRounded-Semibold.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Semibold.woff') format('woff'),
+       url('../fonts/PramukhRounded-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-SemiboldItalic';
+  src: url('../fonts/PramukhRounded-SemiboldItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-SemiboldItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Bold';
+  src: url('../fonts/PramukhRounded-Bold.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Bold.woff') format('woff'),
+       url('../fonts/PramukhRounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-BoldItalic';
+  src: url('../fonts/PramukhRounded-BoldItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-BoldItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Extrabold';
+  src: url('../fonts/PramukhRounded-Extrabold.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Extrabold.woff') format('woff'),
+       url('../fonts/PramukhRounded-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-ExtraboldItalic';
+  src: url('../fonts/PramukhRounded-ExtraboldItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-ExtraboldItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PramukhRounded-Black';
+  src: url('../fonts/PramukhRounded-Black.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Black.woff') format('woff'),
+       url('../fonts/PramukhRounded-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PramukhRounded-BlackItalic';
+  src: url('../fonts/PramukhRounded-BlackItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-BlackItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 200.0 to 900.0
+*/
+@font-face {
+  font-family: 'PramukhRounded-Variable';
+  src: url('../fonts/PramukhRounded-Variable.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-Variable.woff') format('woff'),
+       url('../fonts/PramukhRounded-Variable.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 200.0 to 900.0
+*/
+@font-face {
+  font-family: 'PramukhRounded-VariableItalic';
+  src: url('../fonts/PramukhRounded-VariableItalic.woff2') format('woff2'),
+       url('../fonts/PramukhRounded-VariableItalic.woff') format('woff'),
+       url('../fonts/PramukhRounded-VariableItalic.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: italic;
+}
+

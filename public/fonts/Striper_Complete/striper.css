@@ -1,0 +1,22 @@
+/**
+* @license
+*
+* Font Family: Striper
+* Designed by: Jitka Janečková
+* URL: https://www.fontshare.com/fonts/striper
+* © 2026 Indian Type Foundry
+*
+* Striper Regular 
+
+*
+*/
+@font-face {
+  font-family: 'Striper-Regular';
+  src: url('../fonts/Striper-Regular.woff2') format('woff2'),
+       url('../fonts/Striper-Regular.woff') format('woff'),
+       url('../fonts/Striper-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+

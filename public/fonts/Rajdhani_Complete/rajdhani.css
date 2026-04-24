@@ -1,0 +1,80 @@
+/**
+* @license
+*
+* Font Family: Rajdhani
+* Designed by: Shiva Nallaperumal, Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/rajdhani
+* © 2026 Indian Type Foundry
+*
+* Rajdhani Light 
+* Rajdhani Regular 
+* Rajdhani Medium 
+* Rajdhani SemiBold 
+* Rajdhani Bold 
+* Rajdhani Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Rajdhani-Light';
+  src: url('../fonts/Rajdhani-Light.woff2') format('woff2'),
+       url('../fonts/Rajdhani-Light.woff') format('woff'),
+       url('../fonts/Rajdhani-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rajdhani-Regular';
+  src: url('../fonts/Rajdhani-Regular.woff2') format('woff2'),
+       url('../fonts/Rajdhani-Regular.woff') format('woff'),
+       url('../fonts/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rajdhani-Medium';
+  src: url('../fonts/Rajdhani-Medium.woff2') format('woff2'),
+       url('../fonts/Rajdhani-Medium.woff') format('woff'),
+       url('../fonts/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rajdhani-SemiBold';
+  src: url('../fonts/Rajdhani-SemiBold.woff2') format('woff2'),
+       url('../fonts/Rajdhani-SemiBold.woff') format('woff'),
+       url('../fonts/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rajdhani-Bold';
+  src: url('../fonts/Rajdhani-Bold.woff2') format('woff2'),
+       url('../fonts/Rajdhani-Bold.woff') format('woff'),
+       url('../fonts/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'Rajdhani-Variable';
+  src: url('../fonts/Rajdhani-Variable.woff2') format('woff2'),
+       url('../fonts/Rajdhani-Variable.woff') format('woff'),
+       url('../fonts/Rajdhani-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+

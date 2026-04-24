@@ -1,0 +1,72 @@
+/**
+* @license
+*
+* Font Family: Array
+* Designed by: Frode Helland
+* URL: https://www.fontshare.com/fonts/array
+* © 2026 Indian Type Foundry
+*
+* Array Wide 
+* Array Regular 
+* Array Semibold 
+* Array SemiboldWide 
+* Array BoldWide 
+* Array Bold 
+
+*
+*/
+@font-face {
+  font-family: 'Array-Wide';
+  src: url('../fonts/Array-Wide.woff2') format('woff2'),
+       url('../fonts/Array-Wide.woff') format('woff'),
+       url('../fonts/Array-Wide.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Regular';
+  src: url('../fonts/Array-Regular.woff2') format('woff2'),
+       url('../fonts/Array-Regular.woff') format('woff'),
+       url('../fonts/Array-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Semibold';
+  src: url('../fonts/Array-Semibold.woff2') format('woff2'),
+       url('../fonts/Array-Semibold.woff') format('woff'),
+       url('../fonts/Array-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-SemiboldWide';
+  src: url('../fonts/Array-SemiboldWide.woff2') format('woff2'),
+       url('../fonts/Array-SemiboldWide.woff') format('woff'),
+       url('../fonts/Array-SemiboldWide.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-BoldWide';
+  src: url('../fonts/Array-BoldWide.woff2') format('woff2'),
+       url('../fonts/Array-BoldWide.woff') format('woff'),
+       url('../fonts/Array-BoldWide.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Bold';
+  src: url('../fonts/Array-Bold.woff2') format('woff2'),
+       url('../fonts/Array-Bold.woff') format('woff'),
+       url('../fonts/Array-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+

@@ -1,0 +1,80 @@
+/**
+* @license
+*
+* Font Family: Hoover
+* Designed by: Gaetan Baehr
+* URL: https://www.fontshare.com/fonts/hoover
+* © 2026 Indian Type Foundry
+*
+* Hoover Thin 
+* Hoover Light 
+* Hoover Regular 
+* Hoover Medium 
+* Hoover Bold 
+* Hoover Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Hoover-Thin';
+  src: url('../fonts/Hoover-Thin.woff2') format('woff2'),
+       url('../fonts/Hoover-Thin.woff') format('woff'),
+       url('../fonts/Hoover-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hoover-Light';
+  src: url('../fonts/Hoover-Light.woff2') format('woff2'),
+       url('../fonts/Hoover-Light.woff') format('woff'),
+       url('../fonts/Hoover-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hoover-Regular';
+  src: url('../fonts/Hoover-Regular.woff2') format('woff2'),
+       url('../fonts/Hoover-Regular.woff') format('woff'),
+       url('../fonts/Hoover-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hoover-Medium';
+  src: url('../fonts/Hoover-Medium.woff2') format('woff2'),
+       url('../fonts/Hoover-Medium.woff') format('woff'),
+       url('../fonts/Hoover-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hoover-Bold';
+  src: url('../fonts/Hoover-Bold.woff2') format('woff2'),
+       url('../fonts/Hoover-Bold.woff') format('woff'),
+       url('../fonts/Hoover-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'Hoover-Variable';
+  src: url('../fonts/Hoover-Variable.woff2') format('woff2'),
+       url('../fonts/Hoover-Variable.woff') format('woff'),
+       url('../fonts/Hoover-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+

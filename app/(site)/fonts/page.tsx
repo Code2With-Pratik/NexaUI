@@ -389,7 +389,7 @@ function FontCard({
       <div className="my-auto flex flex-1 items-center justify-center overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.p
-            key={customText + localSize + localWeight}
+            key={customText}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -397,11 +397,11 @@ function FontCard({
             contentEditable
             suppressContentEditableWarning
             onClick={(e) => e.stopPropagation()}
-            className="w-full bg-transparent outline-none transition-colors"
+            className="w-full bg-transparent outline-none"
             style={{
               fontFamily: family.fontFamily,
               fontStyle: family.fontStyle || "normal",
-              fontSize: `${localSize}px`,
+              fontSize: `${viewMode === "grid" ? Math.min(localSize, 80) : localSize}px`,
               fontWeight: localWeight,
               lineHeight: 1.2,
               color: "var(--color-accent-primary)",

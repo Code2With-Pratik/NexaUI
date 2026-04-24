@@ -1,0 +1,80 @@
+/**
+* @license
+*
+* Font Family: Trench Slab
+* Designed by: Shiva Nallaperumal
+* URL: https://www.fontshare.com/fonts/trench-slab
+* © 2026 Indian Type Foundry
+*
+* Trench Slab Light 
+* Trench Slab Regular 
+* Trench Slab Medium 
+* Trench Slab Semibold 
+* Trench Slab Bold 
+* Trench Slab Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'TrenchSlab-Light';
+  src: url('../fonts/TrenchSlab-Light.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Light.woff') format('woff'),
+       url('../fonts/TrenchSlab-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TrenchSlab-Regular';
+  src: url('../fonts/TrenchSlab-Regular.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Regular.woff') format('woff'),
+       url('../fonts/TrenchSlab-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TrenchSlab-Medium';
+  src: url('../fonts/TrenchSlab-Medium.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Medium.woff') format('woff'),
+       url('../fonts/TrenchSlab-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TrenchSlab-Semibold';
+  src: url('../fonts/TrenchSlab-Semibold.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Semibold.woff') format('woff'),
+       url('../fonts/TrenchSlab-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TrenchSlab-Bold';
+  src: url('../fonts/TrenchSlab-Bold.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Bold.woff') format('woff'),
+       url('../fonts/TrenchSlab-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'TrenchSlab-Variable';
+  src: url('../fonts/TrenchSlab-Variable.woff2') format('woff2'),
+       url('../fonts/TrenchSlab-Variable.woff') format('woff'),
+       url('../fonts/TrenchSlab-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+

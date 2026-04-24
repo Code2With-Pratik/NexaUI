@@ -1,0 +1,22 @@
+/**
+* @license
+*
+* Font Family: Kola
+* Designed by: Jean-Baptiste Morizot
+* URL: https://www.fontshare.com/fonts/kola
+* © 2026 Indian Type Foundry
+*
+* Kola Regular 
+
+*
+*/
+@font-face {
+  font-family: 'Kola-Regular';
+  src: url('../fonts/Kola-Regular.woff2') format('woff2'),
+       url('../fonts/Kola-Regular.woff') format('woff'),
+       url('../fonts/Kola-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
