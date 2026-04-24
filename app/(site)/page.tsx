@@ -14,7 +14,7 @@ export default function Page() {
         <SnakeRail />
         <Hero />
 
-        <section className="relative z-20 mx-auto -mt-8 w-full max-w-[1060px] px-6 pb-24 md:-mt-16 md:pb-36">
+        <section className="relative z-20 mx-auto -mt-2 w-full max-w-[1060px] px-6 pb-24 md:-mt-4 md:pb-36">
           <WindowMockup />
         </section>
       </div>

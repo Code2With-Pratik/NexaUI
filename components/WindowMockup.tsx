@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { auraEase, scaleIn } from "@/lib/motion";
 
 type SidebarItem = { label: ViewKey; group: "INPUTS" | "DISPLAY" };
@@ -16,10 +16,41 @@ const sidebarItems: SidebarItem[] = [
   { label: "Badge", group: "DISPLAY" },
 ];
 
+/* How long to wait between auto-tab swaps (ms) */
+const AUTO_CYCLE_INTERVAL = 3500;
+/* When the user clicks a tab manually, pause auto-cycling for this long
+   so we don't fight whatever they're trying to look at. */
+const USER_PAUSE_DURATION = 10000;
+
 export default function WindowMockup() {
   const [active, setActive] = useState<ViewKey>("Button");
   const [minimized, setMinimized] = useState(false);
   const reduce = useReducedMotion();
+
+  /* Timestamp until which auto-cycling is paused. Manual clicks bump it. */
+  const pausedUntilRef = useRef(0);
+
+  /* Auto-rotate through sidebar tabs. Skipped when:
+     - the user just clicked a tab (pausedUntilRef in the future)
+     - the window is minimised (no point cycling hidden content)
+     - the user has prefers-reduced-motion set */
+  useEffect(() => {
+    if (reduce || minimized) return;
+    const id = window.setInterval(() => {
+      if (Date.now() < pausedUntilRef.current) return;
+      setActive((current) => {
+        const idx = sidebarItems.findIndex((i) => i.label === current);
+        const next = sidebarItems[(idx + 1) % sidebarItems.length];
+        return next.label;
+      });
+    }, AUTO_CYCLE_INTERVAL);
+    return () => window.clearInterval(id);
+  }, [reduce, minimized]);
+
+  const selectTab = (label: ViewKey) => {
+    setActive(label);
+    pausedUntilRef.current = Date.now() + USER_PAUSE_DURATION;
+  };
 
   return (
     <motion.div
@@ -86,7 +117,7 @@ export default function WindowMockup() {
                         return (
                           <li key={item.label}>
                             <button
-                              onClick={() => setActive(item.label)}
+                              onClick={() => selectTab(item.label)}
                               className={`flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-[13px] transition-colors ${
                                 isActive
                                   ? "border border-border-hover bg-fg/5 text-accent-primary"
