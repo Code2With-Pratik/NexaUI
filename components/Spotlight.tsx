@@ -9,6 +9,7 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "framer-motion";
 import { auraEase } from "@/lib/motion";
 
@@ -30,9 +31,46 @@ type Props = {
 
 export default function Spotlight({ open, onClose }: Props) {
   const router = useRouter();
+  const { resolvedTheme, setTheme } = useTheme();
   const [query, setQuery] = useState("");
   const [activeIdx, setActiveIdx] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  /* Theme toggle — go through next-themes so the change persists in
+     localStorage and stays in sync with useTheme() everywhere. The
+     previous implementation toggled the .dark class directly which
+     bypassed next-themes and only flipped half the time (because
+     next-themes also juggles a .light class).
+     Uses View Transitions API for the circular reveal — same effect
+     as the Navbar toggle, but originating from screen center since
+     the trigger lives inside a centered modal. */
+  const toggleTheme = useCallback(() => {
+    const next = resolvedTheme === "dark" ? "light" : "dark";
+
+    if (
+      typeof document === "undefined" ||
+      !("startViewTransition" in document)
+    ) {
+      setTheme(next);
+      return;
+    }
+
+    const x = window.innerWidth / 2;
+    const y = window.innerHeight / 2;
+    const r = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const root = document.documentElement;
+    root.style.setProperty("--x", `${x}px`);
+    root.style.setProperty("--y", `${y}px`);
+    root.style.setProperty("--r", `${r}px`);
+
+    document.startViewTransition(() => {
+      setTheme(next);
+    });
+  }, [resolvedTheme, setTheme]);
 
   const items: Item[] = useMemo(
     () => [
@@ -90,13 +128,10 @@ export default function Spotlight({ open, onClose }: Props) {
         label: "Toggle Theme",
         group: "THEME",
         icon: <SunMoonIcon />,
-        action: () => {
-          const root = document.documentElement;
-          root.classList.toggle("dark");
-        },
+        action: toggleTheme,
       },
     ],
-    []
+    [toggleTheme]
   );
 
   const filtered = useMemo(() => {

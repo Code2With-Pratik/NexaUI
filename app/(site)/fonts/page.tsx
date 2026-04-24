@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import {
+  MarkBox,
+  MarkBrush,
+  MarkCircle,
+  MarkSparkle,
+  Sparkle,
+} from "@/components/HandMarkers";
 
 export const metadata: Metadata = {
   title: "Fonts — Aura UI",
@@ -36,18 +43,75 @@ const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 012345
 
 export default function FontsPage() {
   return (
-    <main className="relative mx-auto w-full max-w-[1240px] px-6 py-20 md:py-28">
-      <header className="mb-16 max-w-2xl">
+    <main className="relative mx-auto w-full max-w-[1240px] px-6 pt-6 pb-20 md:pt-10 md:pb-28">
+      {/* Centered header — same recipe as Components / Icons / Showcase */}
+      <header className="mb-12 flex flex-col items-center px-2 text-center md:mb-16">
         <p className="eyebrow mb-3">Type system</p>
-        <h1 className="display-clamp text-balance text-fg">
-          Three families,{" "}
-          <span className="not-italic font-sans font-light text-[var(--color-accent-primary)]">
-            one voice.
+
+        <h1
+          className="display-clamp text-balance text-fg"
+          style={{ fontSize: "clamp(2rem, 4.5vw + 0.5rem, 4.75rem)" }}
+        >
+          Three families,
+          <br />
+          <span className="relative inline-block px-2.5 align-baseline">
+            <Sparkle
+              className="absolute -left-1 -top-1 h-4 w-4"
+              delay="0s"
+            />
+            <Sparkle
+              className="absolute -right-2 top-2 h-3 w-3"
+              delay="0.5s"
+            />
+            <Sparkle
+              className="absolute -bottom-1 left-3 h-2.5 w-2.5"
+              delay="1s"
+            />
+            <Sparkle
+              className="absolute -right-1 -bottom-2 h-3.5 w-3.5"
+              delay="1.4s"
+            />
+            <span
+              className="relative not-italic font-sans font-light"
+              style={{ color: "var(--color-accent-primary)" }}
+            >
+              one voice.
+            </span>
           </span>
         </h1>
-        <p className="mt-6 text-pretty text-base leading-relaxed text-fg/60">
-          Arima holds the body and UI. Instrument Serif handles display moments — the place where the system breathes.
-          Geist Mono carries code, shortcuts, and tabular numerics.
+
+        <div aria-hidden className="mt-5 flex items-center gap-2.5">
+          <span
+            className="h-[2px] w-14 rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-accent-primary) 75%, transparent))",
+            }}
+          />
+          <span
+            className="h-1.5 w-1.5 rotate-45"
+            style={{
+              backgroundColor: "var(--color-accent-primary)",
+              boxShadow:
+                "0 0 12px color-mix(in srgb, var(--color-accent-primary) 70%, transparent)",
+            }}
+          />
+          <span
+            className="h-[2px] w-14 rounded-full"
+            style={{
+              background:
+                "linear-gradient(90deg, color-mix(in srgb, var(--color-accent-primary) 75%, transparent), transparent)",
+            }}
+          />
+        </div>
+
+        <p className="mt-7 max-w-[620px] text-pretty text-base leading-relaxed text-fg/70 md:text-lg">
+          <MarkCircle>Arima</MarkCircle> holds the body and UI.{" "}
+          <MarkBrush>Instrument Serif</MarkBrush> handles display moments —
+          the place where the system{" "}
+          <MarkSparkle>breathes</MarkSparkle>.{" "}
+          <MarkBox>Geist Mono</MarkBox> carries code, shortcuts, and tabular
+          numerics.
         </p>
       </header>
 

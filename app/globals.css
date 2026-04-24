@@ -12,6 +12,30 @@
   --color-fd-ring: var(--color-accent-primary);
 }
 
+/* Fumadocs light-mode overrides.
+   black.css ships dark values for every --color-fd-* token; without
+   these mappings the docs sidebar/nav read pure white in light theme.
+   We map Fumadocs tokens onto the project's cream palette so the docs
+   chrome inherits the same light theme as the marketing site. */
+.light {
+  --color-fd-background: var(--color-bg);
+  --color-fd-foreground: var(--color-fg);
+  --color-fd-card: var(--color-surface);
+  --color-fd-card-foreground: var(--color-fg);
+  --color-fd-popover: var(--color-surface);
+  --color-fd-popover-foreground: var(--color-fg);
+  --color-fd-primary: var(--color-accent-primary);
+  --color-fd-primary-foreground: #000;
+  --color-fd-secondary: color-mix(in srgb, var(--color-fg) 6%, var(--color-surface));
+  --color-fd-secondary-foreground: var(--color-fg);
+  --color-fd-muted: color-mix(in srgb, var(--color-fg) 5%, var(--color-bg));
+  --color-fd-muted-foreground: var(--color-fg-muted);
+  --color-fd-accent: color-mix(in srgb, var(--color-accent-primary) 14%, var(--color-surface));
+  --color-fd-accent-foreground: var(--color-fg);
+  --color-fd-border: color-mix(in srgb, var(--color-fg) 12%, transparent);
+  --color-fd-ring: var(--color-accent-primary);
+}
+
 /* ---------------------------------------------------------------
    Aura UI — Tailwind v4 design tokens
    Tokens are exposed as both CSS variables (for raw CSS / inline
