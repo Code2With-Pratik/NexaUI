@@ -28,6 +28,8 @@ export interface Variant {
   fileName: string;
   componentName: string;
   code: string;
+  highlightedCode: string;
+  highlightedSnippet: string;
 }
 
 /* Client-side registry. Imported here so the previews are instantiated
@@ -143,7 +145,7 @@ function Grid({
             <div className="flex flex-1 items-center justify-center">
               {/* Preview surface — neutral slab so each variant's own
                   background pops without competing with the card chrome. */}
-              <div className="grid w-full flex-1 place-items-center rounded-lg bg-black/40 p-4">
+              <div className="grid w-full flex-1 place-items-center rounded-lg bg-black/5 dark:bg-black/40 p-4">
                 <Preview id={v.id} />
               </div>
             </div>
@@ -171,13 +173,6 @@ function Detail({
   variant: Variant;
   onBack: () => void;
 }) {
-  const [showFull, setShowFull] = useState(false);
-
-  const importPath = `@/app/(site)/components/Buttons/${variant.fileName.replace(
-    /\.tsx$/,
-    "",
-  )}`;
-  const snippet = `import ${variant.componentName} from "${importPath}";\n\nexport default function Demo() {\n  return <${variant.componentName} />;\n}`;
   const installCmd = buildInstallCommand(variant.code);
 
   return (
@@ -202,7 +197,7 @@ function Detail({
 
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel label="Preview">
-          <div className="grid h-[280px] place-items-center rounded-lg bg-black/40 p-6">
+          <div className="grid h-[280px] place-items-center rounded-lg bg-black/5 dark:bg-black/40 p-6">
             <Preview id={variant.id} />
           </div>
         </Panel>
@@ -218,52 +213,13 @@ function Detail({
 
       <div className="mt-4">
         <Panel label="Snippet">
-          <CodeBlock value={snippet} language="tsx" />
+          <CodeBlock value={variant.highlightedSnippet} isHtml />
         </Panel>
       </div>
 
       <div className="mt-4">
-        <Panel
-          label="Full code"
-          right={
-            <button
-              type="button"
-              onClick={() => setShowFull((s) => !s)}
-              className="aura-border inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium text-fg/80 transition-colors hover:text-fg"
-            >
-              {showFull ? (
-                <>
-                  Hide code <ChevronUp className="h-3 w-3" />
-                </>
-              ) : (
-                <>
-                  Show code <ChevronDown className="h-3 w-3" />
-                </>
-              )}
-            </button>
-          }
-        >
-          <AnimatePresence initial={false}>
-            {showFull && (
-              <motion.div
-                key="full"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.28, ease: auraEase }}
-                style={{ overflow: "hidden" }}
-              >
-                <CodeBlock value={variant.code} language="tsx" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-          {!showFull && (
-            <p className="text-[12px] text-fg-muted">
-              Source for{" "}
-              <span className="font-mono text-fg/80">{variant.fileName}</span>{" "}
-              is hidden &mdash; click <em>Show code</em> to expand.
-            </p>
-          )}
+        <Panel label="Full code">
+          <CodeBlock value={variant.highlightedCode} isHtml expandable />
         </Panel>
       </div>
     </>
@@ -272,7 +228,7 @@ function Detail({
 
 /* ============================================================
    shared bits
-============================================================ */
+ ============================================================ */
 
 function Panel({
   label,
@@ -299,12 +255,24 @@ function Panel({
   );
 }
 
-function CodeBlock({ value, language }: { value: string; language: string }) {
+function CodeBlock({
+  value,
+  language,
+  isHtml,
+  expandable = false,
+}: {
+  value: string;
+  language?: string;
+  isHtml?: boolean;
+  expandable?: boolean;
+}) {
   const [copied, setCopied] = useState(false);
+  const [expanded, setExpanded] = useState(!expandable);
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(value);
+      const textToCopy = isHtml ? value.replace(/<[^>]*>?/gm, "") : value;
+      await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1400);
     } catch {
@@ -313,12 +281,12 @@ function CodeBlock({ value, language }: { value: string; language: string }) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative group/code">
       <button
         type="button"
         onClick={copy}
         aria-label="Copy"
-        className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-md border border-border-default bg-fg/5 px-2 py-1 text-[10px] font-medium text-fg/80 transition-colors hover:bg-fg/10 hover:text-fg"
+        className="absolute right-2 top-2 z-20 inline-flex items-center gap-1 rounded-md border border-border-default bg-fg/5 px-2 py-1 text-[10px] font-medium text-fg/80 opacity-0 transition-opacity group-hover/code:opacity-100 hover:bg-fg/10 hover:text-fg"
       >
         {copied ? (
           <>
@@ -330,12 +298,52 @@ function CodeBlock({ value, language }: { value: string; language: string }) {
           </>
         )}
       </button>
-      <pre
-        className="max-h-[520px] overflow-auto rounded-lg border border-border-default bg-black/40 p-4 pr-20 font-mono text-[12px] leading-relaxed text-fg/85"
-        data-lang={language}
+
+      <div
+        data-lenis-prevent
+        className={`relative rounded-lg border border-border-default transition-all duration-500 ease-aura ${
+          !expanded ? "max-h-[220px] overflow-hidden" : "max-h-[800px] overflow-auto"
+        } bg-[#0d1117] dark:bg-[#0d1117]`}
       >
-        <code>{value}</code>
-      </pre>
+        {isHtml ? (
+          <div
+            data-lenis-prevent
+            className="shiki-wrapper p-5 pr-20 font-mono text-[13px] leading-relaxed [&_pre]:!bg-transparent [&_pre]:!p-0 [&_pre]:!overflow-visible [&_code]:!bg-transparent"
+            dangerouslySetInnerHTML={{ __html: value }}
+          />
+        ) : (
+          <pre
+            data-lenis-prevent
+            className="p-5 pr-20 font-mono text-[13px] leading-relaxed text-gray-300"
+            data-lang={language}
+          >
+            <code data-lenis-prevent>{value}</code>
+          </pre>
+        )}
+
+        {/* Gradient Mask + Expand Button */}
+        {expandable && !expanded && (
+          <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none flex h-24 items-end justify-center bg-gradient-to-t from-black/95 to-transparent pb-4">
+            <button
+              type="button"
+              onClick={() => setExpanded(true)}
+              className="aura-glass pointer-events-auto flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[12px] font-medium text-white shadow-2xl backdrop-blur-md transition-transform hover:scale-105"
+            >
+              Expand Code <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        )}
+      </div>
+      
+      {expandable && expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(false)}
+          className="mt-2 text-[11px] font-medium text-fg/40 hover:text-fg transition-colors"
+        >
+          Show less
+        </button>
+      )}
     </div>
   );
 }

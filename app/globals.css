@@ -222,7 +222,6 @@
       inset 0 0 0 1px rgba(255, 255, 245, 0.5);
   }
   .aura-card:hover {
-    transform: translateY(-4px);
     border-color: var(--color-border-hover);
     box-shadow:
       0 30px 80px -40px color-mix(in srgb, var(--color-accent-primary) 18%, transparent),
@@ -261,7 +260,6 @@
       8px 8px 18px rgba(170, 155, 60, 0.24),
       -5px -5px 14px rgba(255, 255, 245, 1);
     border-color: rgba(170, 155, 60, 0.16);
-    transform: translateY(-2px);
   }
 
   /* Inset input — pressed-in look for search fields and text inputs. */
