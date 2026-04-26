@@ -6,7 +6,7 @@ import { codeToHtml } from "shiki";
 
 export const metadata: Metadata = {
   title: "Cards — Aura UI",
-  description: "Six high-fidelity card variants with modern hover effects.",
+  description: "Eight high-fidelity card variants with modern hover effects.",
 };
 
 const NAMES = [
@@ -16,6 +16,8 @@ const NAMES = [
   "Rotating Border Glow",
   "Productive Slide Up",
   "Media Expansion",
+  "Windows OS Slide",
+  "Radial Color Reveal",
 ];
 
 async function loadVariants(): Promise<Variant[]> {
@@ -28,7 +30,7 @@ async function loadVariants(): Promise<Variant[]> {
   );
 
   const variants = await Promise.all(
-    Array.from({ length: 6 }, async (_, i) => {
+    Array.from({ length: 8 }, async (_, i) => {
       const fileName = `Card${i + 1}.tsx`;
       const code = fs.readFileSync(path.join(dir, fileName), "utf8");
       
