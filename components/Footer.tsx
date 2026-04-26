@@ -50,7 +50,13 @@ export default function Footer() {
           {/* Brand + copyright */}
           <div className="max-w-xs">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <LogoMark size={28} />
+              <div className="flex size-8 items-center justify-center overflow-hidden rounded-lg">
+                <img
+                  src="/Logo.gif"
+                  alt="Aura UI Logo"
+                  className="size-full object-cover mix-blend-multiply dark:invert dark:mix-blend-screen"
+                />
+              </div>
               <span className="text-[15px] font-semibold tracking-tight text-fg">
                 Aura UI
               </span>

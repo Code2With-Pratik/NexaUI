@@ -128,10 +128,17 @@ function Grid({
     <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {variants.map((v) => (
         <li key={v.id}>
-          <button
-            type="button"
+          <div
+            role="button"
+            tabIndex={0}
             onClick={() => onSelect(v.id)}
-            className="aura-tile group relative flex h-[220px] w-full flex-col overflow-hidden p-4 text-left"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onSelect(v.id);
+              }
+            }}
+            className="aura-tile group relative flex h-[220px] w-full cursor-pointer flex-col overflow-hidden p-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
           >
             <div className="flex flex-1 items-center justify-center">
               {/* Preview surface — neutral slab so each variant's own
@@ -146,7 +153,7 @@ function Grid({
                 {v.fileName}
               </span>
             </div>
-          </button>
+          </div>
         </li>
       ))}
     </ul>

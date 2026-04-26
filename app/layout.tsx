@@ -3,6 +3,7 @@ import { Arima, Instrument_Serif, Geist_Mono } from "next/font/google";
 import { RootProvider } from "fumadocs-ui/provider";
 import ThemePicker from "@/components/ThemePicker";
 import SmoothScroll from "@/components/SmoothScroll";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
 import "./globals.css";
 
 const arima = Arima({
@@ -30,12 +31,30 @@ export const metadata: Metadata = {
   title: "Aura UI — A macOS-inspired component system",
   description:
     "A high-fidelity component library inspired by macOS — glassmorphic surfaces, lime accents, and tactile motion.",
-  metadataBase: new URL("https://aura-ui.local"),
+  metadataBase: new URL("https://aura-ui-os.vercel.app/"),
+  icons: {
+    icon: "/Favicon.ico",
+    apple: "/Favicon.ico",
+  },
   openGraph: {
     title: "Aura UI",
     description:
       "macOS-inspired component system built with Next.js 15 and Tailwind v4.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aura UI — A macOS-inspired component system",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aura UI",
+    description: "macOS-inspired component system",
+    images: ["/og-image.png"],
   },
 };
 
@@ -71,6 +90,7 @@ export default function RootLayout({
             search dialog so the shortcut belongs exclusively to our
             custom Spotlight (mounted from Navbar.tsx). */}
         <RootProvider search={{ enabled: false }}>
+          <BackgroundBlobs />
           <SmoothScroll>
             {children}
           </SmoothScroll>
