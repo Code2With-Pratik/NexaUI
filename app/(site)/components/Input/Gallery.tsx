@@ -110,7 +110,7 @@ export default function Gallery({
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.32, ease: auraEase }}
           >
-            <CategoryNav activeSlug={slug} />
+            <CategoryNav slug={slug} />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {variants.map((v) => (
                 <div
